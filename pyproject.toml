@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "druidtools"
+version = "0.1.0"
+description = ""
+authors = ["Jakub Scholtz <jakubscholtz@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pymongo = "^4.6.1"
+streamlit = "^1.29.0"
+gradio = "^4.12.0"
+toml = "^0.10.2"
+requests = "^2.31.0"
+streamlit-antd-components = "^0.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
