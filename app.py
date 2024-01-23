@@ -97,7 +97,7 @@ if not st.session_state['selected']:
         entry = sac.CasItem(ctype, children=submenu)
         menu.append(entry)
             
-    cols = st.columns([6,6,6])
+    cols = st.columns([3,6,3])
     with cols[1]:    
         sac.cascader(items=menu, label='Creatures', multiple=True, search=True, clear=True, key='sac_creature_input')
         st.button(label='Show',on_click=showme, type='primary')
@@ -110,20 +110,20 @@ if st.session_state['selected']:
 
     N = len(st.session_state['just_creatures'])
     if N == 1:
-        cols = st.columns([1,1,1])
-        scale=1.0
+        cols = st.columns([0.5,1,0.5])
+        scale=0.9
     elif N == 2:
-        cols = st.columns([2,3,1,3,2])
-        scale=0.9
+        cols = st.columns([1,3,0.5,3,1])
+        scale=0.7
     elif N == 3:
-        cols = st.columns([2,6,1,6,1,6,2])
-        scale=0.9
-    elif N == 4:
-        cols = st.columns([1]+[6,1]*N)
-        scale=0.75
-    elif N > 4:
-        cols = st.columns([1]+[6,1]*N)
+        cols = st.columns([1,6,0.5,6,0.5,6,1])
         scale=0.6
+    elif N == 4:
+        cols = st.columns([0.5]+[6,0.5]*N)
+        scale=0.5
+    elif N > 4:
+        cols = st.columns([0.5]+[6,0.5]*N)
+        scale=0.4
 
 
     for i,item in enumerate(st.session_state['just_creatures']):
